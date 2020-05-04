@@ -8,18 +8,18 @@ use\Session;
 
 class TestController extends Controller
 {
-   public function index(){
+  public function index(){
    	return view('Admin.pages.index');
    }
-   public function signup(){
+  public function signup(){
    	return view('Admin.pages.signup');
    }
-    public function login()
+  public function login()
     {
         return view('login');
     }
 
-    public function loginstore(Request $req){
+  public function loginstore(Request $req){
      /// dd($req);
         // echo $req->email;
          $email = $req->email;
@@ -50,7 +50,7 @@ class TestController extends Controller
                 
                 }
         }
-     public function store(Request $request)
+    public function store(Request $request)
     {
         $obj = new User();
         $obj->fullname = $request->name;
@@ -65,12 +65,18 @@ class TestController extends Controller
 
     public function logout()
     {
-         Session::flush();
-       return redirect()->to('login');
+      Session::flush();
+      return redirect()->to('login');
     }
 
 
- public function  User_index(){
-        return view('User.pages.index');
+    public function  User_index(){
+      return view('User.pages.index');
     }
-  }
+
+
+    public function Sarah(){
+      dd("I Love You");
+    }
+
+}
